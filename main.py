@@ -9,3 +9,15 @@ MorseCode= {'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-
 #функция которая создаёт инпут
 
 user_input = input("Введите текст для перевода в азбуку Морзе: ")
+
+#функция которая переводит текст в азбуку морзе
+# (каюсь тут не смог сам сделать и использовал ChatGPT)
+
+def text_to_morse(text):
+    morse_code = ''
+    for char in text:
+        if char.upper() in morse_code_dict:
+            morse_code += morse_code_dict[char.upper()] + ' '
+        elif char == ' ':
+            morse_code += ' '
+    return morse_code.strip()
